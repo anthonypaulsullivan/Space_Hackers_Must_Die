@@ -1,12 +1,7 @@
 # Space_Hackers_Must_Die
 A text adventure game in Python. You play as a new hacker trying to escape a spaceship.
-
-
-*************************
-python3 spacehackers.py
-*************************
-
-
+          ____________________________________________
+          
 A small python program that was built up from code by christian thompson to help learn python 
 scripting and help provide a basis for a future, more elaborate game idea.
 
