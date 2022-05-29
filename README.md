@@ -1,9 +1,9 @@
 
-********************************
-    Space Hackers Must Die
-********************************
-
-
+ __   __        __   ___               __        ___  __   __                 __  ___     __     ___ 
+/__` |__)  /\  /  ` |__     |__|  /\  /  ` |__/ |__  |__) /__`     |\/| |  | /__`  |     |  \ | |__  
+.__/ |    /~~\ \__, |___    |  | /~~\ \__, |  \ |___ |  \ .__/     |  | \__/ .__/  |     |__/ | |___  
+                                                                                                     
+												     
 A small python program that was built up from code by christian thompson to help learn python 
 scripting and help provide a basis for a future, more elaborate game idea.
 
@@ -20,5 +20,5 @@ definetly used before and one that most real hackers use often.
 It's not quit finished. I still need to figure out how to create the "super secret password"
 And do a few more cosmetic upgrades.
 
-	- Antomatron
+Antomatron
 	
