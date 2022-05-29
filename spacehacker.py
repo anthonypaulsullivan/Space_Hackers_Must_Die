@@ -24,20 +24,20 @@ class Item(object):
 
 # Create items
 # Closet Items
-screen1 = Item("screen", "\nA blank \033[3;31mscreen\033[3;32m. It doesn't seem to be working\n", False)
+screen1 = Item("screen", "\nA blank \033[3;31mscreen\033[3;32m. It doesn't seem to be working.\n", False)
 uniform = Item("uniform", "\nA Military \033[3;31muniform\033[3;32m that is unfamiliar to you.\n", True)
-shelf = Item("shelf", "\nAn empty shelf... Well except a little space dust.\n", False)
+shelf = Item("shelf", "\nAn empty shelf... Well except for a little space dust.\n", False)
         
 # Control Room Items
 guard = Item("guard", "\nThe \033[3;31mguard\033[3;32m looks friendly enough...for now...", False)
-weapon = Item("weapon", "\nYou notice the \033[3;31mguard\033[3;32m's \033[3;31mweapon\033[3;32m unattended on the desk.\nThe \033[1;32mHammond Elite Forces Special\033[3;32m, with built in wifi...", True)
-electronic_lock = Item("lock", "\nThe lock is in front of a large door to the east.", "False")
+weapon = Item("weapon", "\nA standard issue \033[3;31mweapon\033[3;32m for this quadrant.\nThe \033[1;32mHammond Elite Forces Special\033[0m\033[3;32m, with built in WiFi...", True)
+electronic_lock = Item("lock", "\nThis seems to control access to the airlock. You notice an \033[3;31mid\033[3;32m scanner attached", False)
 id = Item("id", "\nExamining the \033[3;31mid\033[3;32m you notice a code of some kind at the bottom.\nIt reads: '\033[3;33m706c616e6574\033[3;32m'\nPeculiar...", True)
 
 # Airlock Items
-spacesuit = Item("spacesuit", "\nThe \033[3;31mspacesuit\033[3;32m looks old, but safe.\n", True)
-button = Item("button", "\nThe big red \033[3;31mbutton\033[3;32m has a warning symbol on it.\n", False)
-computer = Item("computer" , "\nAn old, dusty \033[3;31mcomputer\033[3;32m sits in the corner.\n", False)
+spacesuit = Item("spacesuit", "\nThe \033[3;31mspacesuit\033[3;32m will protect you from the vastness of space, probably.\n...and has \033[1;32mbuilt in WiFi\033[0m\033[3;32m.\n", True)
+button = Item("button", "\nThe large \033[3;31mbutton\033[3;32m on the wall is clearly labelled '\033[1;32mWARNING - OUTER DOOR\033[0m\033[3;32m'.\n", False)
+computer = Item("computer" , "\nAhh, the '\033[1;32mBates 2000\033[0m\033[3;32m' \033[3;31mcomputer\033[3;32m. Built to last forever.\n", False)
 
 # Kitchen Items
 robot = Item("robot", "\nOne of those ancient \033[3;31mrobot\033[3;32m chef things. What are they called again? \nMaybe you could '\033[1;32mtalk\033[0m\033[3;32m' to it.", False)
@@ -46,8 +46,8 @@ broucher = Item("broucher", "\nThis must be the \033[3;31mrobot\033[3;32m's menu
 thermostat = Item("thermostat", "\nA temperature control device i probably shouldn't mess with...\nProbably", False)
 
 # Fridge Items
-carcuss = Item("carcuss", "\nA stripped out carcuss of a large, unknown animal swings by chains", False)
-mushrooms = Item("mushrooms", "\nThese don't look like the mushrooms that chef \033[3;31mrobot\033[3;32m needed.\nDid he say they needed to be \033[3;33mmagic\033[3;32m?", False)
+carcass = Item("carcass", "\nA stripped out carcass of a large, unknown animal swings by chains. You feel hungry!", False)
+mushrooms = Item("mushrooms", "\nThese don't look like the \033[3;31mmushrooms\033[3;32m that chef \033[3;31mrobot\033[3;32m needed.\nDid he say they needed to be \033[3;33mmagic\033[3;32m?", False)
 coin = Item("coin", "\nTarnished and dusty, the \033[3;31mcoin\033[3;32m looks old.\nYou turn it over and notice some characters stamped into it: \033[3;33maGFja2luZwo=\033[3;32m \nIs this another 'ingredient'? ", True)
 
 # Bathroom Items
@@ -57,12 +57,15 @@ sign = Item("sign", "\nAn unmissable \033[3;31msign\033[3;32m on the wall reads 
 ticket = Item("ticket", "\nThere's a \033[3;31mticket\033[3;32m stub seemingly discarded on the floor.\nA single, hand-written word stands out: '\033[3;33mrirel\033[3;32m'.\nWhat the heck does that mean?", True)
 
 # Outside Items
-planet = Item("planet", "\nYou're amazed at how close you are to a large, dessert planet", False)
+planet = Item("planet", "\nYou're amazed at how close you are to a large, desert planet", False)
 pod = Item("pod", "\nNo idea what i was thinking here", False)
 vastness = Item("vastness", "\nThe shear amount of vastness is vast", False)
 
 # Your Ship Items
-chair = Item("chair", "\nThe Captains chair", False)
+chair = Item("chair", "\nThe Captains \033[3;31mchair\033[3;32m ...with built in Wifi.", False)
+coffee_machine = Item("coffee", "\nThe aroma of freshly brewed \033[3;31mcoffee\033[3;32m fills the cabin.\nPouring yourself a \033[1;32mlarge mug\033[0m\033[3;32m you ponder the \033[3;33mclues\033[3;32m you've found.", False)
+scanner = Item("scanner", "Your trusty '\033[1;32mScan-U-Later\033[0m\033[3;32m'. Now, how do i '\033[1;32muse\033[0m\033[3;32m' it again?", False)
+sign2 = Item("sign", "You proudly read in bold letters: \033[1;32m\033[1m\033[4mSpace Hackers Are Awesome!\033[0m\033[3;32m", False)
 
 
 # Create Rooms
@@ -73,14 +76,14 @@ closet.items.append(screen1)
 closet.items.append(shelf)
 
 # Control Room
-control_room = Room("The Control Room", "You look around. You see an airlock door.")
+control_room = Room("The Control Room", "You see an airlock door to the east. There's a kitchen to the \033[3;31mnorth\033[3;32m.")
 control_room.items.append(guard)
 control_room.items.append(weapon)
 control_room.items.append(electronic_lock)
 control_room.items.append(id)
 
 # Kitchen
-kitchen = Room("Kitchen", "\nYou are in a bright, industrial looking \033[1;32mkitchen\033[0m\033[3;32m.\nThere is a refridgerator to your east and a bathroom to your west.\nSouth is the control room")
+kitchen = Room("Kitchen", "\nYou are in a bright, industrial looking \033[1;32mkitchen\033[0m\033[3;32m.\nThere is a refridgerator to your \033[3;31meast\033[3;32m and a bathroom to your \033[3;31mwest\033[3;32m.\n\033[3;31msouth\033[3;32m is the control room")
 kitchen.items.append(robot)
 kitchen.items.append(sign)
 kitchen.items.append(broucher)
@@ -88,7 +91,7 @@ kitchen.items.append(thermostat)
 
 # Fridge
 fridge = Room("Fridge", "\nYou're in a large \033[1;32mrefridgerator\033[0m\033[3;32m. Strange meat hangs from the ceiling.\nThere isn't much on the shelves. You shiver in the cold.")
-fridge.items.append(carcuss)
+fridge.items.append(carcass)
 fridge.items.append(mushrooms)
 fridge.items.append(coin)
 
@@ -100,20 +103,23 @@ bathroom.items.append(sign)
 bathroom.items.append(ticket)
 
 # Airlock
-airlock = Room("The Airlock", "You've entered the \033[1;32mairlock\033[0m\033[3;32m. You peer out a small window at the vastness of space. \nThere is an airlock door to the west.")
+airlock = Room("The Airlock", "You've entered the \033[1;32mairlock\033[0m\033[3;32m. You peer out a small window at the vastness of space. \nThe airlock door is to the \033[3;31mwest\033[3;32m.")
 airlock.items.append(spacesuit)
 airlock.items.append(button)
 airlock.items.append(computer)
 
 # Outside
-outside = Room("Space", "You are now in Space. Real Space. Not movie Space.")
+outside = Room("Space", "You are now in \033[1;32mSpace\033[0m\033[3;32m. Real \033[1;32mSpace\033[0m\033[3;32m. Not movie \033[1;32mSpace\033[0m\033[3;32m.\nYou see your spaceship to the \033[3;31mnorth\033[3;32m. The airlock is to the \033[3;31mwest\033[3;32m.")
 outside.items.append(planet)
 outside.items.append(pod)
 outside.items.append(vastness)
 
 # Your Ship
-your_ship = Room("Ship", "Your space ship")
+your_ship = Room("Ship", "The sleek, modern \033[1;32mspacecraft\033[0m\033[3;32m you call home. A real \033[1;32mbeauty\033[0m\033[3;32m!")
 your_ship.items.append(chair)
+your_ship.items.append(scanner)
+your_ship.items.append(coffee_machine)
+your_ship.items.append(sign2)
 
 
 # Create exits
@@ -158,13 +164,13 @@ clear()
 sleep(1)
 
 # Flag function for test purposes
-flag1 = "a"
-flag2 = "b"
-flag3 = "c"
-encflag1 = "aGFja2luZwo="
-encflag2 = "rirel"
-encflag3 = "706c616e6574"
-password = flag1 + flag2 + flag3
+#flag1 = "a"
+#flag2 = "b"
+#flag3 = "c"
+#encflag1 = "aGFja2luZwo="
+#encflag2 = "rirel"
+#encflag3 = "706c616e6574"
+#password = flag1 + flag2 + flag3
 
 
 # Typing function
@@ -175,7 +181,7 @@ def type(text):
     sys.stdout.write(char)
     sys.stdout.flush()
 
-print("\n\033[3;32m**  \033[3;32mRemote connection detected\033[3;32m  **\n")
+print("\n\033[3;32m**  \033[1;32mRemote connection detected\033[0m  \033[3;32m  **\n")
 sleep(2)
 print(">>  Firewall: ", end="")
 sleep(1)
@@ -189,14 +195,14 @@ print(">>  Coffee Machine: ", end="")
 sleep(1)
 type("     \033[5m\033[1;32mEMPTY\033[0m\033[3;32m  <<\n")
 
-sleep(3)
+sleep(2)
 
 type("\n\033[3;32m>  You've been compromised... ")
-sleep(2)
+sleep(1)
 type("\n>  They found out you were learning to become a \033[1;32mhacker\033[0m\033[3;32m... ")
-sleep(2)
+sleep(1)
 type("\n>  You have to get off the ship \033[1;32mimmediately!\033[0m\033[3;32m ")
-sleep(2)
+sleep(1)
 type("\n>  I've left \033[3;33mclues\033[3;32m for you to help \033[1;32mhack\033[0m\033[3;32m their system... ")
 sleep(1)
 type("\n>")
@@ -206,16 +212,16 @@ sleep(2)
 type("\n>")
 sleep(1)
 type("\n>  Good luck, Candidate! ")
-sleep(1)
+sleep(0.5)
 type(" We're all counting on you !\n\n")
-sleep(4)
+sleep(2)
 
 
 def loading():
     type(">>\033[1;32m  Consciousness Relocation APplication (\033[0m\033[3;32m\033[3;31mC.R.A.P\033[3;32m) \033[1;32mactivating...\033[0m\033[3;32m\n\n")
-    sleep(2)
+    sleep(1)
     for i in range(0, 100):
-        time.sleep(0.05)
+        time.sleep(0.04)
         sys.stdout.write(u"  uploaded...\u001b[1000D" + str(i + 1) + "%  ")
         sys.stdout.flush()
     print
@@ -224,11 +230,11 @@ loading()
 
 time.sleep(2)
 type("\033[3;31m** Activation complete **\033[3;32m")
-sleep(4)
+sleep(3)
 clear()
-sleep(2)
+sleep(1)
 print("\nYou awaken \033[1;32mdizzy\033[0m\033[3;32m and \033[1;32mdisoriented\033[0m\033[3;32m. Was that a dream?")
-sleep(2)
+sleep(1)
 
 
 while True:
@@ -237,11 +243,10 @@ while True:
     sleep(1)
     print("\nYou see the following: \033[3;31m")
     for item in player.location.items:
-        sleep(1)
+        sleep(0.3)
         print(item.name)
     sleep(1)
     print("\033[3;32mHere are the exits: \033[3;31m")
-    sleep(1)
     for exit in player.location.exits:
         print(exit)
  
@@ -270,7 +275,7 @@ while True:
                 print(item.description)
 
     # Look
-    if verb == "look":
+    if verb in ["look", "search", "check"]:
         for item in player.location.items:
             if item.name == noun:
                 print(item.description)
@@ -279,7 +284,7 @@ while True:
                 print(item.description)                
 
     # Get
-    if verb == "get":
+    if verb in ["get", "take", "grab"]:
         for item in player.location.items:
             if item.name == noun:
                 # Check is it movable
@@ -294,7 +299,7 @@ while True:
                     print("\nSorry, you can't move that.\n")
 
     # Drop
-    if verb == "drop":
+    if verb in ["drop", "remove"]:
        for item in player.inventory:
             print("\nYou drop the \033[3;31m{}\033[3;32m.".format(item.name))
             player.inventory.remove(item)
@@ -306,6 +311,7 @@ while True:
         for item in player.inventory:
             print(item.name)
         print(" \033[3;32m")
+        sleep(1)
 
     # Movement
     if verb in ["north", "south", "east", "west", "space", "down"]:
@@ -338,30 +344,26 @@ while True:
             print("The armed \033[3;31mguard\033[3;32m at a computer terminal sees your \033[3;31muniform\033[3;32m and smiles.")
 
     if player.location == control_room:
-        if verb == "open" and noun == "airlock":
-            if id in player.inventory:
-                print("You swipe the \033[3;31mid\033[3;32m and the airlock opens.")
-                control_room.exits["east"] = airlock
-                
-            else:
-                print("The airlock won't open. You must need some \033[3;31mid\033[3;32m to open it.")
-
+        if id in player.inventory:
+            print("You \033[1;32mswipe\033[0m\033[3;32m the \033[3;31mid\033[3;32m and the \033[1;32mairlock opens\033[0m\033[3;32m to the \033[3;31meast\033[3;32m.")
+            control_room.exits["east"] = airlock
+         
     if player.location == control_room:
-        if verb == "get" and noun == "weapon":
+        if verb in ["get", "take", "grab"] and noun == "weapon":
             sleep(2)
-            print("He knew you were a spy and booby-trapped the \033[3;31mweapon\033[3;32m.")
+            print("He knew you were a \033[1;32mspy\033[0m\033[3;32m and booby-trapped the \033[3;31mweapon\033[3;32m.")
             sleep(2)
-            print("\nAs you feel a \033[1;32mmillion volts\033[3;32m course through your body,")
+            print("\nAs you feel a \033[1;32mmillion volts\033[0m\033[3;32m course through your body,")
             sleep(2)
-            print("your last thoughts are...")
+            print("your last thoughts are ")
             sleep(1)
             print(".")
             sleep(1)
             print(".")
             sleep(2)
-            print("...\033[1;32mDoes anybody smell bacon?\033[3;32m")
+            print("...\033[1;32mDoes anybody smell bacon?\033[0m\033[3;32m")
             sleep(3)
-            print("\n\n\033[3;31mGame Over\033[3;32m\n\n")
+            print("\n\n\033[3;32mGame Over\033[3;32m\n\n")
             sleep(2)
             sys.exit()
 
@@ -373,24 +375,27 @@ while True:
        #     print("The airlock door closes! You are trapped.  There is no lock on this side.")
             
     if player.location == airlock:
-        if verb == "press" and noun == "button":
+        if verb in ["press", "push"] and noun == "button":
             if spacesuit in player.inventory:
-                sleep(2)
-                print("\nYou put on the \033[3;31mspacesuit\033[3;32m and push the red \033[3;31mbutton\033[3;32m.")
-                sleep(2)
-                print("The outer airlock door opens...")
-                sleep(2)
-                print("\nAs you float gently out into space you are grabbed roughly by an \n\033[1;32mAlien Tentacle\033[0m\033[3;32m.")
                 sleep(1)
-                print("Numerous other \n\033[1;32mTentacles\033[0m\033[3;32m, all holding \n\033[1;32mprobes\033[0m\033[3;32m, surround you.")
+                print("\nYou quickly put on the \033[3;31mspacesuit\033[3;32m and push the large \033[3;31mbutton\033[3;32m.")
+                sleep(1)
+                print("You hear a \033[1;32mwhooshing\033[0m\033[3;32m sound as the outer airlock door opens...")
                 sleep(2)
-                print("\nYou keep repeating to yourself: '\n\033[1;32mButtons aren't toys... Buttons aren't toys...\033[0m\033[3;32m'")
+                print("\nAs you float gently out into space you are grabbed \nroughly by an \033[1;32mAlien Tentacle\033[0m\033[3;32m.")
                 sleep(2)
-                print("\n\nGame Over\n\n")
+                print("Numerous other \033[1;32mTentacles\033[0m\033[3;32m, all holding \033[1;32mprobes\033[0m\033[3;32m, surround you.")
+                sleep(2)
+                print("\nYou keep repeating to yourself: \n'\033[1;32mButtons aren't toys... Buttons aren't toys...\033[0m\033[3;32m'")
                 sleep(3)
+                print("\n\nGame Over\n\n")
+                sleep(2)
                 sys.exit()
             else:
-                print("\nThe outer airlock door opens.  You are sucked into the vacuum of space and die immediately.")
+                sleep(2)
+                print("\nThe outer airlock door opens with a whoosh and you are forcefully sucked into the vastness of space.")
+                sleep(2)
+                print("\nAs your body freezes you look back at the \033[3;31mspacesuit\033[3;32m hanging on the wall.")
                 sleep(3)
                 print("\n\n\033[3;31mGame Over\033[3;32m\n\n")
                 sleep(3)
@@ -398,25 +403,25 @@ while True:
 
     if player.location == airlock:
         if id in player.inventory and coin in player.inventory and ticket in player.inventory and spacesuit in player.inventory:
-            print("\n\033[1;32mYou've succeeded in finding all the clues and unlocking space\033[0m\033[3;32m")
-            airlock.exits["space"] = outside
+            print("\n\033[1;32mYou've succeeded in finding all the clues and unlocking space\033[0m\033[3;32m\n")
+            airlock.exits["east"] = outside
 
     # Kitchen
     if player.location == kitchen:
-        if verb == "talk" and noun == "robot":
+        if verb in ["talk", "chat", "speak"] and noun == "robot":
             sleep(1)
             print("\nYou hear some crackling, notice some sparks and smell burning...")
-            sleep(3)
+            sleep(2)
             print("\n'\033[1;32mBeep-beep boop-boop\033[0m\033[3;32m'")
-            sleep(2)
+            sleep(1)
             print("'Welcome to the \033[3;33mCyberChef\033[3;32m 3000'")
-            sleep(2)
+            sleep(1)
             print("'Currently OFFLINE due to lack of ingredients' ")
-            sleep(2)
+            sleep(1)
             print("'\033[3;33mGoogle\033[3;32m me if you find anything to \033[3;33mbake\033[3;32m'")
-            sleep(2)
+            sleep(1)
             print("'We apologise for any...\033[1;32mBeep-Boop-Boooooooo....\033[0m\033[3;32m'") 
-            sleep(3)
-    
-
-    
+            sleep(2)
+            if id in player.inventory and coin in player.inventory and ticket in player.inventory:
+                print("\n\033[1;32mThey fixed the airlock!\033[0m\033[3;32m\nYou should be able to escape if you have a \033[3;31mspacesuit\033[0m\033[3;32m.\nJust remember: \n\033[1;32mButtons aren't toys!\033[0m\033[3;32m")
+                
