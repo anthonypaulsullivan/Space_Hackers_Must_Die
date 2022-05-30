@@ -15,7 +15,7 @@ Your choices matter and knowledge is power.
 You'll need to use a couple of real world resources to solve this puzzle, one you've almost
 definetly used before and one that most real hackers use often.
 
-It's not quit finished. I still need to figure out how to create the "super secret password"
+It's not quite finished. I still need to figure out how to create the "super secret password"
 And do a few more cosmetic upgrades.
 
 Antomatron
