@@ -63,7 +63,7 @@ vastness = Item("vastness", "\nThe shear amount of vastness is vast", False)
 
 # Your Ship Items
 chair = Item("chair", "\nThe Captains \033[3;31mchair\033[3;32m ...with built in Wifi.", False)
-coffee_machine = Item("coffee", "\nThe aroma of freshly brewed \033[3;31mcoffee\033[3;32m fills the cabin.\nPouring yourself a \033[1;32mlarge mug\033[0m\033[3;32m you ponder the \033[3;33mclues\033[3;32m you've found.", False)
+coffee_machine = Item("coffee", "\nThe \033[3;31mcoffee\033[3;32mmachine sits worthless in the corner.\nMaybe you need to solve something to hack into it.  you ponder the \033[3;33mclues\033[3;32m you've found.", False)
 scanner = Item("scanner", "Your trusty '\033[1;32mScan-U-Later\033[0m\033[3;32m'. Now, how do i '\033[1;32muse\033[0m\033[3;32m' it again?", False)
 sign2 = Item("sign", "You proudly read in bold letters: \033[1;32m\033[1m\033[4mSpace Hackers Are Awesome!\033[0m\033[3;32m", False)
 
@@ -177,7 +177,7 @@ sleep(1)
 def type(text):
   words = text
   for char in words:
-    time.sleep(0.03)
+    time.sleep(0.02)
     sys.stdout.write(char)
     sys.stdout.flush()
 
@@ -215,14 +215,12 @@ type("\n>  Good luck, Candidate! ")
 sleep(0.5)
 type(" We're all counting on you !\n\n")
 sleep(2)
-
+type(">>\033[1;32m  Consciousness Relocation APplication (\033[0m\033[3;32m\033[3;31mC.R.A.P\033[3;32m) \033[1;32mactivating...\033[0m\033[3;32m\n\n")
 
 def loading():
-    type(">>\033[1;32m  Consciousness Relocation APplication (\033[0m\033[3;32m\033[3;31mC.R.A.P\033[3;32m) \033[1;32mactivating...\033[0m\033[3;32m\n\n")
-    sleep(1)
     for i in range(0, 100):
-        time.sleep(0.04)
-        sys.stdout.write(u"  uploaded...\u001b[1000D" + str(i + 1) + "%  ")
+        time.sleep(0.05)
+        sys.stdout.write(u"\u001b[1000D" + str(i + 1) + "%  ")
         sys.stdout.flush()
     print
     
@@ -236,6 +234,41 @@ sleep(1)
 print("\nYou awaken \033[1;32mdizzy\033[0m\033[3;32m and \033[1;32mdisoriented\033[0m\033[3;32m. Was that a dream?")
 sleep(1)
 
+def success():
+    clear()
+    sleep(1)
+    print("\n>>  Firewall: ", end="")
+    sleep(1)
+    type("      \033[5m\033[1;32mOPERATIONAL\033[0m\033[3;32m   <<\n")
+    sleep(1)
+    print(">>  Security System: ", end="")
+    sleep(1)
+    type("  \033[5m\033[1;32mACTIVATED\033[0m\033[3;32m  <<\n")
+    sleep(1)
+    print(">>  Coffee Machine: ", end="")
+    sleep(1)
+    type("     \033[5m\033[1;32mBREWING\033[0m\033[3;32m  <<\n")
+    sleep(2)
+    type("\n\033[3;32m>  Congratulations Candidate... ")
+    sleep(1)
+    type("\n>  You have successfully patched the system, escaped the ship \n>  and found the path to become a \033[1;32mhacker\033[0m\033[3;32m... ")
+    sleep(2)
+    print("\n\nAs you power on the ship your screens come to life. ")
+    sleep(1)
+    print("An incredibly bright light blinds you...\n\n")
+    sleep(2)
+    type(">>\033[1;32m  Consciousness Relocation APplication (\033[0m\033[3;32m\033[3;31mC.R.A.P\033[3;32m) \033[1;32mactivating...\033[0m\033[3;32m\n\n")
+    loading()
+    time.sleep(2)
+    type("\033[3;31m** Activation complete **\033[3;32m")
+    sleep(3)
+    clear()
+    sleep(2)
+    print("\nYou awaken \033[1;32mdisoriented\033[0m\033[3;32m and \033[1;32mdizzy\033[0m\033[3;32m, inside a different closet...")
+    sleep(3)
+    print("\n\n\033[1;32mGAME OVER\033[3;32m\n\n")
+    sleep(3)
+    sys.exit()
 
 while True:
     #    print(player.location.name)
@@ -425,3 +458,29 @@ while True:
             if id in player.inventory and coin in player.inventory and ticket in player.inventory:
                 print("\n\033[1;32mThey fixed the airlock!\033[0m\033[3;32m\nYou should be able to escape if you have a \033[3;31mspacesuit\033[0m\033[3;32m.\nJust remember: \n\033[1;32mButtons aren't toys!\033[0m\033[3;32m")
                 
+    # Your Ship
+    if player.location == your_ship:
+        if verb in ["use", "operate", "push", "press", "feed"] and noun == "scanner":
+            sleep(2)
+            print("\nThe '\033[1;32mScan-U-Later\033[0m\033[3;32m' humms to life.")
+            sleep(2)
+            print("\n'\033[1;32mBeep-beep boop-boop...\033[0m\033[3;32m'")            
+            sleep(1)
+            print("'Analyzing all \033[3;33mclues\033[3;32m found...'\n")
+            sleep(1)
+            print("      Analyzing coin - \033[3;33maGFja2luZwo=\033[3;32m  ", end="")
+            loading()
+            print("\n\033[5m\033[1;32mBase64 detected !\033[0m\033[3;32m\n")
+            sleep(1)
+            print("      Analyzing id   - \033[3;33m706c616e6574\033[3;32m  ", end="")
+            loading()
+            print("\n\033[5m\033[1;32mHex detected !\033[0m\033[3;32m\n")
+            sleep(1)
+            print("      Analyzing ticket - \033[3;33mrirel\033[3;32m  ", end="")
+            loading()
+            print("\n\033[5m\033[1;32mRot13 detected !\033[0m\033[3;32m\n")
+            sleep(3)
+            print("\n\n\033[3;32m**  \033[1;32mRemote connection detected\033[0m  \033[3;32m  **\n")
+            sleep(3)
+            success()
+
